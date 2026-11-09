@@ -1,0 +1,9 @@
+<!-- Эскиз WPF View. В библиотеке AIS.UI хранится как документационный ресурс. -->
+<UserControl xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <StackPanel Margin="16">
+    <TextBox Text="{Binding TrackingNumber, UpdateSourceTrigger=PropertyChanged}" />
+    <TextBlock Text="{Binding Error}" />
+    <DataGrid ItemsSource="{Binding Events}" IsReadOnly="True" />
+  </StackPanel>
+</UserControl>

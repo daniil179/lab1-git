@@ -1,0 +1,1 @@
+<Project Sdk="Microsoft.NET.Sdk"><PropertyGroup><OutputType>Exe</OutputType></PropertyGroup><ItemGroup><ProjectReference Include="../../src/AIS.Core/AIS.Core.csproj"/><ProjectReference Include="../../src/AIS.Infrastructure/AIS.Infrastructure.csproj"/><ProjectReference Include="../../src/AIS.UI/AIS.UI.csproj"/></ItemGroup></Project>

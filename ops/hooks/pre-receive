@@ -1,0 +1,19 @@
+#!/bin/sh
+# Учебная защита main. Устанавливается на локальном bare-сервере.
+zero=0000000000000000000000000000000000000000
+while read old new ref; do
+  [ "$ref" = refs/heads/main ] || continue
+  if [ "$new" = "$zero" ]; then echo 'DENY main deletion'; exit 1; fi
+  [ "$old" = "$zero" ] && continue
+  if ! git merge-base --is-ancestor "$old" "$new"; then
+    echo 'DENY main non-fast-forward'; exit 1
+  fi
+  parents=$(git rev-list --parents -n 1 "$new" | awk '{print NF-1}')
+  [ "$parents" -ge 2 ] || { echo 'DENY direct commit to main'; exit 1; }
+  subject=$(git log -1 --format=%s "$new")
+  case "$subject" in
+    'Merge release/'*|'Merge hotfix/'*) echo 'ALLOW reviewed release shape' ;;
+    *) echo 'DENY non-release merge'; exit 1 ;;
+  esac
+done
+exit 0

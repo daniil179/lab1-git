@@ -1,0 +1,1 @@
+<Project Sdk="Microsoft.NET.Sdk"><ItemGroup><ProjectReference Include="../AIS.Core/AIS.Core.csproj" /></ItemGroup></Project>
