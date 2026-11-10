@@ -1,0 +1,44 @@
+[
+  {
+    "path": "/api/v1/shipments/LH-2026-000003/events",
+    "status": 200,
+    "expected": 200,
+    "passed": true,
+    "body": "{\"trackingNumber\":\"LH-2026-000003\",\"events\":[{\"source\":\"carrier-a\",\"eventId\":\"evt-0003\",\"trackingNumber\":\"LH-2026-000003\",\"status\":\"received\",\"warehouseId\":\"W01\",\"occurredAt\":\"2026-11-04T06:00:00+00:00\",\"weightKg\":1.25}],\"limit\":50}"
+  },
+  {
+    "path": "/api/v1/shipments/LH-2026-000003/events?limit=1",
+    "status": 200,
+    "expected": 200,
+    "passed": true,
+    "body": "{\"trackingNumber\":\"LH-2026-000003\",\"events\":[{\"source\":\"carrier-a\",\"eventId\":\"evt-0003\",\"trackingNumber\":\"LH-2026-000003\",\"status\":\"received\",\"warehouseId\":\"W01\",\"occurredAt\":\"2026-11-04T06:00:00+00:00\",\"weightKg\":1.25}],\"limit\":1}"
+  },
+  {
+    "path": "/api/v1/shipments/bad/events",
+    "status": 400,
+    "expected": 400,
+    "passed": true,
+    "body": "{\"code\":\"VALIDATION_ERROR\",\"message\":\"Invalid track or limit\"}"
+  },
+  {
+    "path": "/api/v1/shipments/LH-2026-000003/events?limit=0",
+    "status": 400,
+    "expected": 400,
+    "passed": true,
+    "body": "{\"code\":\"VALIDATION_ERROR\",\"message\":\"Invalid track or limit\"}"
+  },
+  {
+    "path": "/api/v1/shipments/LH-2026-999999/events",
+    "status": 404,
+    "expected": 404,
+    "passed": true,
+    "body": "{\"code\":\"SHIPMENT_NOT_FOUND\",\"message\":\"Shipment not found\"}"
+  },
+  {
+    "path": "/api/v1/shipments/LH-2026-000003/events",
+    "status": 401,
+    "expected": 401,
+    "passed": true,
+    "body": "{\"code\":\"UNAUTHORIZED\",\"message\":\"Bearer token required\"}"
+  }
+]

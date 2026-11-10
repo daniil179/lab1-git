@@ -1,0 +1,7 @@
+PASS HTTP 200 /api/v1/shipments/LH-2026-000003/events
+PASS HTTP 200 /api/v1/shipments/LH-2026-000003/events?limit=1
+PASS HTTP 400 /api/v1/shipments/bad/events
+PASS HTTP 400 /api/v1/shipments/LH-2026-000003/events?limit=0
+PASS HTTP 404 /api/v1/shipments/LH-2026-999999/events
+PASS HTTP 401 /api/v1/shipments/LH-2026-000003/events
+TOTAL 6; PASSED 6; FAILED 0
