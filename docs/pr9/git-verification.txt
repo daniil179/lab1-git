@@ -1,0 +1,12 @@
+version https://git-lfs.github.com/spec/v1
+oid sha256:2312394bd99545d9de131c24efb781e765ac1aec243f2ed9347597a793a415e9
+size 262144
+2312394bd9 * assets/fixtures/rfid-frames.bin
+.env
+sample.db
+remote: ALLOW reviewed release shape        
+remote: DENY direct commit to main        
+remote: DENY main deletion        
+remote: DENY main non-fast-forward        
+PASS: main unchanged after rejected pushes
+PASS: clean working tree

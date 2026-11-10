@@ -1,0 +1,10 @@
+* text=auto
+*.cs text eol=lf
+*.csproj text eol=lf
+*.sln text eol=crlf
+*.json text eol=lf
+*.yaml text eol=lf
+*.md text eol=lf
+*.sh text eol=lf
+*.png binary
+assets/fixtures/*.bin filter=lfs diff=lfs merge=lfs -text

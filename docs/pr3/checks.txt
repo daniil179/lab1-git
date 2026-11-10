@@ -1,0 +1,17 @@
+PASS M01_TrackNormalization
+PASS M02_WeightGramsToKg
+PASS M03_TimeToUtc
+PASS M04_StateMapping
+PASS M05_UnknownStatusRejected
+PASS M06_CommaWeightRejected
+PASS M07_MissingOffsetRejected
+PASS M08_UnknownUnitRejected
+PASS M09_NegativeWeightRejected
+PASS M10_PrecisionRejected
+PASS M11_InvalidTrackRejected
+PASS M12_InvalidDateRejected
+PASS R01_Insert
+PASS R02_Duplicate
+PASS R03_Conflict
+PASS R04_LateEventDoesNotReplaceLatest
+TOTAL 16; PASSED 16; FAILED 0
